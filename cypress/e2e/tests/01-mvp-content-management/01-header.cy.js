@@ -17,9 +17,9 @@ describe('Check the Header', function () {
   context('Header categories', function () {
     it('I have access to main products categories from a top menu', function () {
       cy.visit(`${config.baseUrl}`);
-      // cy.get('.menu-dropdown-icon.dropdown a[href="https://test-bachmann-confiserie.arcmedia.ch/de/saison"]')
-      //   .should('be.visible')
-      //   .click();
+      cy.get('[href="https://test-bachmann-confiserie.arcmedia.ch/de/saison"]')
+        .should('be.visible')
+        .click();
       cy.get('.menu > :nth-child(2) > :nth-child(2) > :nth-child(1)')
         .should('be.visible')
         .click();
