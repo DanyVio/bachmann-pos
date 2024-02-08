@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": ".\\node_modules\\.bin\\cypress open",
-    "start_linux_test": "./node_modules/.bin/cypress open --config baseUrl=https://arcmedia:arcmedia123@test-bachmann-confiserie.arcmedia.ch/",
+    "start_linux_test": "./node_modules/.bin/cypress open --config baseUrl=https://arcmedia:arcmedia123@test-pos.confiserie.arcmedia.ch/",
     "start_linux_prod": "./node_modules/.bin/cypress open --config baseUrl=https://arcmedia:arcmedia123@confiserie.ch/",
     "test": ".\\node_modules\\.bin\\cypress run",
     "test_linux_test": "./node_modules/.bin/cypress run --config baseUrl=https://arcmedia:arcmedia123@confiserie.ch/",
