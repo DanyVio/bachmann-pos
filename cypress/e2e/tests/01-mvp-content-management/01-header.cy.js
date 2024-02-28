@@ -4,7 +4,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   return false
 });
 
-describe('Check the Header', function () {
+describe('Header', function () {
 
   beforeEach('before each test', function () {
     cy.visit(`${config.baseUrl}`);
@@ -12,7 +12,7 @@ describe('Check the Header', function () {
       .should('be.visible')
       .click();
     cy.wait(3000);
-    cy.get('.modal-popup > .action-close')
+    cy.get('.amgdprcookie-button.-decline')
       .should('be.visible')
       .click();
     
