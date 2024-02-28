@@ -33,12 +33,12 @@ describe('Shopping Cart as a guest', function () {
     cy.get('.level0.active > .o-list > :nth-child(1) > a')
       .should('be.visible')
       .click();
-    cy.get('.-allow')
-      .should('be.visible')
-      .click();
-    cy.get('#btn-cookie-allow')
-      .should('be.visible')
-      .click();
+    // cy.get('.-allow')
+    //   .should('be.visible')
+    //   .click();
+    // cy.get('#btn-cookie-allow')
+    //   .should('be.visible')
+    //   .click();
     cy.get(':nth-child(1) > .product-item-info > .d-mode-grid > .product-item-link')
       .should('be.visible')
       .click();
