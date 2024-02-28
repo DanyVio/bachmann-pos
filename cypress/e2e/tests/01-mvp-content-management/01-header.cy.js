@@ -8,13 +8,14 @@ describe('Check the Header', function () {
 
   beforeEach('before each test', function () {
     cy.visit(`${config.baseUrl}`);
-    cy.get('.amgdprcookie-button.-allow.-save')
-      .should('be.visible')
-      .click();
-    cy.wait(3000);
     cy.get('#btn-cookie-allow')
       .should('be.visible')
       .click();
+    cy.wait(3000);
+    cy.get('.modal-popup > .action-close')
+      .should('be.visible')
+      .click();
+    
   });
 
   context('Log In', function () {
