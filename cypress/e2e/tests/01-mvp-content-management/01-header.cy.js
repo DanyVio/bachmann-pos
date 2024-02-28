@@ -12,10 +12,9 @@ describe('Header', function () {
       .should('be.visible')
       .click();
     cy.wait(3000);
-    cy.get('.amgdprcookie-button.-decline')
+    cy.get('.amgdprcookie-button.-allow.-save')
       .should('be.visible')
       .click();
-    
   });
 
   context('Log In', function () {
@@ -23,6 +22,9 @@ describe('Header', function () {
       cy.visit(`${config.baseUrl}`);
       cy.get('#employee_number')
         .type('1234');
+      cy.get('#submit-button')
+        .should('be.visible')
+        .click();
       });
     it.skip('I have access to the cart and see a mini cart in a header menu as a guest', function () {
       cy.visit(`${config.baseUrl}`);
