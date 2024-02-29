@@ -8,13 +8,13 @@ describe('Header', function () {
 
   beforeEach('before each test', function () {
     cy.visit(`${config.baseUrl}`);
-    cy.get('.allow')
+    cy.get('.amgdprcookie-button.-allow.-save')
       .should('be.visible')
       .click();
     cy.wait(3000);
     cy.get('#btn-cookie-allow')
       .should('be.visible')
-      .click(); 
+      .click();
   });
 
   
