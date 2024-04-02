@@ -4,7 +4,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   return false
 });
 
-describe('Header', function () {
+describe('Footer', function () {
 
   beforeEach('cookie banner', function () {
     cy.visit(`${config.baseUrl}`);
@@ -19,7 +19,14 @@ describe('Header', function () {
   });
 
   it('Check the footer', function () {
-    
+    cy.scrollTo('bottom');
+    cy.get('.row > .col > .newsletter-contact-wrapper > :nth-child(2) > a')
+      .should('be.visible')
+      .click({ multiple: true });
+    cy.scrollTo('bottom');
+    cy.get('.row > .col > .newsletter-contact-wrapper > :nth-child(3) > a')
+      .should('be.visible')
+      .click({ multiple: true });
   });
 });
 
