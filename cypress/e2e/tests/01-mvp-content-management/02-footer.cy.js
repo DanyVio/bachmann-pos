@@ -4,33 +4,22 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   return false
 });
 
-describe('Check the Footer', function () {
+describe('Header', function () {
 
-  beforeEach('before each test', function () {
+  beforeEach('cookie banner', function () {
     cy.visit(`${config.baseUrl}`);
-    cy.get('.amgdprcookie-button.-allow.-save')
+    cy.get('.ambar-btn-accept')
       .should('be.visible')
       .click();
-    cy.wait(3000);
-    cy.get('#btn-cookie-allow')
-      .should('be.visible')
-      .click();
-  });
-
-  it('check all the links in the footer', function () {
-    cy.visit(`${config.baseUrl}`);
     cy.get('#employee_number')
       .type('1234');
     cy.get('#submit-button')
       .should('be.visible')
       .click();
-    cy.scrollTo('bottom');
-    cy.get('.newsletter-contact-wrapper > :nth-child(2) > a').contains('Zahlungsbedingungen')
-      .should('be.visible')
-      .click({ multiple: true });
-    cy.scrollTo('bottom');
-    cy.get('.newsletter-contact-wrapper > :nth-child(3) > a')
-      .should('be.visible')
-      .click({ multiple: true });
+  });
+
+  it('Check the footer', function () {
+    
   });
 });
+

@@ -6,27 +6,37 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 describe('Header', function () {
 
-  // beforeEach('before each test', function () {
-  //   cy.visit(`${config.baseUrl}`);
-  //   cy.get('.amgdprcookie-button.-allow.-save')
-  //     .should('be.visible')
-  //     .click();
-  //   cy.wait(3000);
-  //   cy.get('#btn-cookie-allow')
-  //     .should('be.visible')
-  //     .click();
-  // });
-
-  
-  // it('Log in as a employee user', function () {
-  //   cy.visit(`${config.baseUrl}`);
-  //   cy.get('#employee_number')
-  //     .type('1234');
-  //   cy.get('#submit-button')
-  //     .should('be.visible')
-  //     .click();
-  //   });
-  it('I have access to the cart and see a mini cart in a header menu as a guest', function () {
+  beforeEach('cookie banner', function () {
     cy.visit(`${config.baseUrl}`);
+    cy.get('.ambar-btn-accept')
+      .should('be.visible')
+      .click();
+    cy.get('#employee_number')
+      .type('1234');
+    cy.get('#submit-button')
+      .should('be.visible')
+      .click();
+  });
+
+  it('Check the Categories', function () {
+    cy.visit(`${config.baseUrl}`);
+    cy.get('.w-full > .md-top-menu-items > .nav-587 > [href="https://test-pos.confiserie.arcmedia.ch/pos/saison"]')
+      .should('be.visible')
+      .click();
+    cy.get('.w-full > .md-top-menu-items > .nav-588 > [href="https://test-pos.confiserie.arcmedia.ch/pos/apero"]')
+      .should('be.visible')
+      .click();
+    cy.get('.w-full > .md-top-menu-items > .nav-589 > [href="https://test-pos.confiserie.arcmedia.ch/pos/lieferservice"]')
+      .should('be.visible')
+      .click();
+    cy.get('.w-full > .md-top-menu-items > .nav-590 > [href="https://test-pos.confiserie.arcmedia.ch/pos/schokolade"]')
+      .should('be.visible')
+      .click();
+    cy.get('.w-full > .md-top-menu-items > .nav-591 > [href="https://test-pos.confiserie.arcmedia.ch/pos/kundengeschenke"]')
+      .should('be.visible')
+      .click();
+    cy.get('.w-full > .md-top-menu-items > .nav-592 > [href="https://test-pos.confiserie.arcmedia.ch/pos/torten"]')
+      .should('be.visible')
+      .click();
   });
 });
