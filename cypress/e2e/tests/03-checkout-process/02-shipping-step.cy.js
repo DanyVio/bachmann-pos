@@ -4,7 +4,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   return false
 });
 
-describe('Cart', function () {
+describe('shipping step', function () {
 
   beforeEach('cookie banner', function () {
     cy.visit(`${config.baseUrl}`);
@@ -18,7 +18,7 @@ describe('Cart', function () {
       .click();
   });
 
-  it('shopping cart', function () {
+  it('shipping step', function () {
     cy.visit(`${config.baseUrl}`);
     cy.get('.w-full > .md-top-menu-items > .nav-587 > [href="https://test-pos.confiserie.arcmedia.ch/pos/saison"]')
       .should('be.visible')
