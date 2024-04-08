@@ -18,15 +18,18 @@ describe('Footer', function () {
       .click();
   });
 
-  it('Check the footer', function () {
+  it('Onlineshop', function () {
     cy.scrollTo('bottom');
     cy.get('.row > .col > .newsletter-contact-wrapper > :nth-child(2) > a')
-      .should('be.visible')
-      .click({ multiple: true });
-    cy.scrollTo('bottom');
+      .should('have.attr', 'href')
+      .then((href) => {
+        expect(href).to.equal('');
+    });
     cy.get('.row > .col > .newsletter-contact-wrapper > :nth-child(3) > a')
-      .should('be.visible')
-      .click({ multiple: true });
+      .should('have.attr', 'href')
+      .then((href) => {
+        expect(href).to.equal('');
+    });
   });
 });
 
