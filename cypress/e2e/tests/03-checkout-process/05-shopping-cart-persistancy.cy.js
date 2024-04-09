@@ -47,8 +47,6 @@ describe('shopping cart persistancy', function () {
     cy.get('.pt-3 > [href="https://test-pos.confiserie.arcmedia.ch/pos/checkout/cart/"]')
       .should('be.visible')
       .click();
-  });
-  it('checking the persistancy', function () {
     cy.visit(`${config.baseUrl}/pos/checkout/cart/`);
   });
 });
