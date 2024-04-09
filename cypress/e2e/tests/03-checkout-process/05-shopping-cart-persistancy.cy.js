@@ -48,6 +48,9 @@ describe('shopping cart persistancy', function () {
       .should('be.visible')
       .click();
   });
+  it('checking the persistancy', function () {
+    cy.visit(`${config.baseUrl}/pos/checkout/cart/`);
+  });
 });
 
 
