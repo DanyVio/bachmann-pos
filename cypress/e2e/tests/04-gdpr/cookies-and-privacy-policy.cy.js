@@ -35,8 +35,7 @@ describe('Cookies and privacy policy', function () {
       .click();
     cy.get(':nth-child(4) > .ambar-action-btn')
       .should('be.visible')
-      .click();
-      
+      .click(); 
   });
 });
 
