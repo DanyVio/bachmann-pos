@@ -8,12 +8,12 @@ describe('Content page', function () {
 
   beforeEach('cookie banner', function () {
     cy.visit(`${config.baseUrl}`);
-    cy.get('.ambar-btn-accept')
-      .should('be.visible')
-      .click();
     cy.get('#employee_number')
       .type('1234');
     cy.get('#submit-button')
+      .should('be.visible')
+      .click();
+    cy.get('.ambar-btn-accept')
       .should('be.visible')
       .click();
   });
@@ -23,7 +23,6 @@ describe('Content page', function () {
     cy.get(':nth-child(3) > .widget > .home-category-promotion-container > .home-category-promotion-wrapper > :nth-child(1) > a > img')
       .should('be.visible')
       .click();
-    cy.scrollTo('bottom')
     cy.get('.flex > img')
       .should('be.visible')
       .click();

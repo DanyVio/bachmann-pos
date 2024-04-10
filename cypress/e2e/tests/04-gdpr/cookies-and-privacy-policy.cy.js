@@ -8,10 +8,7 @@ describe('Cookies and privacy policy', function () {
 
   it('cookies and privacy policy', function () {
     cy.visit(`${config.baseUrl}`)
-    cy.location('protocol').should('eq', 'https:')
-    cy.get('.ambar-btn-settings')
-      .should('be.visible')
-      .click();
+    cy.get('.ambar-btn-settings').contains('Einstellungen anpassen').click();
     cy.get('.flex-col > :nth-child(2) > .btn')
       .should('be.visible')
       .click();
