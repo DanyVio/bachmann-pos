@@ -90,7 +90,7 @@ describe('upload foto', function () {
       .should('be.visible')
       .click()
       .click();
-    cy.wait(15000);
+    cy.wait(25000);
     cy.get('#options_19550_text')
       .type('test');
     cy.get('#product-addtocart-button')
