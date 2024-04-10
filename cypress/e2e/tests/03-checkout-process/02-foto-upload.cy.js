@@ -11,15 +11,15 @@ describe('upload foto', function () {
     cy.get('.ambar-btn-accept')
       .should('be.visible')
       .click();
-  });
-
-  it('upload foto error', function () {
-    cy.visit(`${config.baseUrl}`);
     cy.get('#employee_number')
       .type('1234');
     cy.get('#submit-button')
       .should('be.visible')
       .click();
+  });
+
+  it('upload foto error', function () {
+    cy.visit(`${config.baseUrl}`);
     cy.get('.w-full > .md-top-menu-items > .nav-592 > [href="https://test-pos.confiserie.arcmedia.ch/pos/torten"]')
       .should('be.visible')
       .click();

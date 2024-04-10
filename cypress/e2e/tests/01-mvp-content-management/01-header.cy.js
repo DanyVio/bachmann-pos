@@ -11,15 +11,16 @@ describe('Header', function () {
     cy.get('.ambar-btn-accept')
       .should('be.visible')
       .click();
-  });
-
-  it('Check the Categories', function () {
-    cy.visit(`${config.baseUrl}`)
     cy.get('#employee_number')
       .type('1234');
     cy.get('#submit-button')
       .should('be.visible')
       .click();
+  });
+
+  it('Check the Categories', function () {
+    cy.visit(`${config.baseUrl}`)
+    
     cy.get('.w-full > .md-top-menu-items > .nav-587 > [href="https://test-pos.confiserie.arcmedia.ch/pos/saison"]')
       .should('be.visible')
       .click();
