@@ -31,7 +31,9 @@ describe("shopping cart persistancy", function () {
       .should("be.visible")
       .click();
     cy.get(".qty > .plus").should("be.visible").click();
-    cy.get("#options_3614_44256").should("be.visible").click();
+    cy.get("#options_16622_60857").should("be.visible").click();
+    cy.get("#options_16619_60847").should("be.visible").click();
+    cy.get("#options_16620_60913").should("be.visible").click();
     cy.get("#product-addtocart-button").should("be.visible").click();
     cy.get("#menu-cart-icon > .absolute").should("be.visible").click();
     cy.get(
@@ -39,6 +41,9 @@ describe("shopping cart persistancy", function () {
     )
       .should("be.visible")
       .click();
-    cy.visit(`${config.baseUrl}/pos/checkout/cart/`);
   });
+
+  it("checking the cart", function () {
+    cy.visit(`${config.baseUrl}/pos/checkout/cart/`);
+  })
 });
