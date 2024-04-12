@@ -8,6 +8,7 @@ describe("Header", function () {
   beforeEach("cookie banner", function () {
     cy.visit(`${config.baseUrl}`);
     cy.get(".ambar-btn-accept").should("be.visible").click();
+    cy.wait(5000);
     cy.get("#employee_number").type("1234");
     cy.get("#submit-button").should("be.visible").click();
   });
@@ -37,8 +38,6 @@ describe("Header", function () {
 
   it("Check the Search field", function () {
     cy.visit(`${config.baseUrl}`);
-    cy.get("#employee_number").type("1234");
-    cy.get("#submit-button").should("be.visible").click();
     cy.get("#search").type("carmelo");
     cy.get(".text-xs").contains('Sorry, nothing has been found for "carmelo".').should("be.visible");
     cy.get("#search").clear().type("torten");

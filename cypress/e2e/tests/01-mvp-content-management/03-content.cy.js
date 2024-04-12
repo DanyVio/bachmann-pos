@@ -7,9 +7,9 @@ Cypress.on("uncaught:exception", (err, runnable) => {
 describe("Content page", function () {
   beforeEach("cookie banner", function () {
     cy.visit(`${config.baseUrl}`);
+    cy.get(".ambar-btn-accept").should("be.visible").click();
     cy.get("#employee_number").type("1234");
     cy.get("#submit-button").should("be.visible").click();
-    cy.get(".ambar-btn-accept").should("be.visible").click();
   });
 
   it("components home page", function () {
