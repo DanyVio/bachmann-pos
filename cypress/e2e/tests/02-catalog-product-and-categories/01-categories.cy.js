@@ -5,23 +5,26 @@ Cypress.on("uncaught:exception", (err, runnable) => {
 });
 
 describe("Header", function () {
-  beforeEach("cookie banner", function () {
+  beforeEach("employee number", function () {
     cy.visit(`${config.baseUrl}`);
-    cy.get(".ambar-btn-accept").should("be.visible").click();
     cy.get("#employee_number").type("1234");
     cy.get("#submit-button").should("be.visible").click();
   });
 
   it("Check the Categories", function () {
     cy.visit(`${config.baseUrl}`);
-    cy.get(
-      '.w-full > .md-top-menu-items > .nav-587 > [href="https://test-pos.confiserie.arcmedia.ch/pos/saison"]'
-    )
+    cy.get('[href="https://test-pos.confiserie.arcmedia.ch/pos/saison"]')
+      .contains(" Saison&Spezialitäten ")
       .should("be.visible")
       .click();
-    cy.get(
-      '.w-full > .md-top-menu-items > .nav-588 > [href="https://test-pos.confiserie.arcmedia.ch/pos/apero"]'
-    )
+    cy.get('.order-1 > .flex > img')
+      .should("be.visible")
+      .click();
+    cy.get('[href="https://test-pos.confiserie.arcmedia.ch/pos/apero"]')
+      .contains("  Apéro  ")
+      .should("be.visible")
+      .click();
+    cy.get('.order-1 > .flex > img')
       .should("be.visible")
       .click();
     cy.get(
