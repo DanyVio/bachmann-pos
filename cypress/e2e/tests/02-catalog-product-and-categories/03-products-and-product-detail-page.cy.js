@@ -5,9 +5,8 @@ Cypress.on("uncaught:exception", (err, runnable) => {
 });
 
 describe("Header", function () {
-  beforeEach("cookie banner", function () {
+  beforeEach("employee number", function () {
     cy.visit(`${config.baseUrl}`);
-    cy.get(".ambar-btn-accept").should("be.visible").click();
     cy.get("#employee_number").type("1234");
     cy.get("#submit-button").should("be.visible").click();
   });
@@ -15,13 +14,12 @@ describe("Header", function () {
   it("Check the Categories", function () {
     cy.visit(`${config.baseUrl}`);
     cy.get(
-      '.w-full > .md-top-menu-items > .nav-587 > [href="https://test-pos.confiserie.arcmedia.ch/pos/saison"]'
+      '.main-navigation .w-full [href="https://test-pos.confiserie.arcmedia.ch/pos/saison"]'
     )
+      .contains(" Saison&Spezialitäten ")
       .should("be.visible")
       .click();
-    cy.get(
-      '.c-sidebar > :nth-child(2) > :nth-child(2) > [href="https://test-pos.confiserie.arcmedia.ch/pos/saison/ostern"]'
-    )
+    cy.get(':nth-child(2) > :nth-child(3) > [href="https://test-pos.confiserie.arcmedia.ch/pos/saison/geschenkkarte"]')
       .should("be.visible")
       .click();
     cy.get(".level0.active > .o-list > :nth-child(1) > a")

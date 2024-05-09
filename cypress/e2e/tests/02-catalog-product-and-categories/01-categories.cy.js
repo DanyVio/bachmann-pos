@@ -13,38 +13,45 @@ describe("Header", function () {
 
   it("Check the Categories", function () {
     cy.visit(`${config.baseUrl}`);
-    cy.get('[href="https://test-pos.confiserie.arcmedia.ch/pos/saison"]')
+    cy.get(
+      '.main-navigation .w-full [href="https://test-pos.confiserie.arcmedia.ch/pos/saison"]'
+    )
       .contains(" Saison&Spezialitäten ")
       .should("be.visible")
       .click();
-    cy.get('.order-1 > .flex > img')
-      .should("be.visible")
-      .click();
-    cy.get('[href="https://test-pos.confiserie.arcmedia.ch/pos/apero"]')
-      .contains("  Apéro  ")
-      .should("be.visible")
-      .click();
-    cy.get('.order-1 > .flex > img')
-      .should("be.visible")
-      .click();
+    cy.get(".order-1 > .flex > img").should("be.visible").click();
     cy.get(
-      '.w-full > .md-top-menu-items > .nav-589 > [href="https://test-pos.confiserie.arcmedia.ch/pos/lieferservice"]'
+      '.main-navigation .w-full [href="https://test-pos.confiserie.arcmedia.ch/pos/apero"]'
     )
+      .contains(" Apéro ")
       .should("be.visible")
       .click();
+    cy.get(".order-1 > .flex > img").should("be.visible").click();
     cy.get(
-      '.w-full > .md-top-menu-items > .nav-590 > [href="https://test-pos.confiserie.arcmedia.ch/pos/schokolade"]'
+      '.main-navigation .w-full [href="https://test-pos.confiserie.arcmedia.ch/pos/lieferservice"]'
     )
+      .contains("Brot&Snacks")
       .should("be.visible")
       .click();
+    cy.get(".order-1 > .flex > img").should("be.visible").click();
     cy.get(
-      '.w-full > .md-top-menu-items > .nav-591 > [href="https://test-pos.confiserie.arcmedia.ch/pos/kundengeschenke"]'
+      '.main-navigation .w-full [href="https://test-pos.confiserie.arcmedia.ch/pos/schokolade"]'
     )
+      .contains("Schokolade")
       .should("be.visible")
       .click();
+    cy.get(".order-1 > .flex > img").should("be.visible").click();
     cy.get(
-      '.w-full > .md-top-menu-items > .nav-592 > [href="https://test-pos.confiserie.arcmedia.ch/pos/torten"]'
+      '.main-navigation .w-full [href="https://test-pos.confiserie.arcmedia.ch/pos/kundengeschenke"]'
     )
+      .contains("Kundengeschenke")
+      .should("be.visible")
+      .click();
+    cy.get(".order-1 > .flex > img").should("be.visible").click();
+    cy.get(
+      '.main-navigation .w-full [href="https://test-pos.confiserie.arcmedia.ch/pos/torten"]'
+    )
+      .contains("Torten")
       .should("be.visible")
       .click();
   });

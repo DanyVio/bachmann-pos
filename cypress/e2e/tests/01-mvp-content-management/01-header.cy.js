@@ -14,35 +14,36 @@ describe("Header", function () {
   it("Check the Categories", function () {
     cy.visit(`${config.baseUrl}`);
     cy.get(
-      '.md-top-menu-items [href="https://test-pos.confiserie.arcmedia.ch/pos/saison"]'
+      '.main-navigation .w-full [href="https://test-pos.confiserie.arcmedia.ch/pos/saison"]'
     )
       .contains(" Saison&Spezialitäten ")
       .should("be.visible")
       .click();
     cy.get(
-      '.md-top-menu-items [href="https://test-pos.confiserie.arcmedia.ch/pos/apero"]'
+      '.main-navigation .w-full [href="https://test-pos.confiserie.arcmedia.ch/pos/apero"]'
     )
+      .contains(" Apéro ")
       .should("be.visible")
       .click();
     cy.get(
-      '[href="https://test-pos.confiserie.arcmedia.ch/pos/lieferservice"]'
+      '.main-navigation .w-full [href="https://test-pos.confiserie.arcmedia.ch/pos/lieferservice"]'
     )
       .contains("Brot&Snacks")
       .click();
     cy.get(
-      '[href="https://test-pos.confiserie.arcmedia.ch/pos/schokolade"]'
+      '.main-navigation .w-full [href="https://test-pos.confiserie.arcmedia.ch/pos/schokolade"]'
     )
       .contains("Schokolade")
       .should("be.visible")
       .click();
     cy.get(
-      '[href="https://test-pos.confiserie.arcmedia.ch/pos/kundengeschenke"]'
+      '.main-navigation .w-full [href="https://test-pos.confiserie.arcmedia.ch/pos/kundengeschenke"]'
     )
       .contains("Kundengeschenke")
       .should("be.visible")
       .click();
     cy.get(
-      '[href="https://test-pos.confiserie.arcmedia.ch/pos/torten"]'
+      '.main-navigation .w-full [href="https://test-pos.confiserie.arcmedia.ch/pos/torten"]'
     )
       .contains("Torten")
       .should("be.visible")
